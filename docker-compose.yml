@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  app:
+    environment: 
+      CHOKIDAR_USEPOLLING: "true"
+    build:
+      dockerfile: Dockerfile
+      context: ./app
+    volumes:
+      - /opt/app/node_modules
+      - ./app:/opt/app
+    ports:
+      - "3000:3000"
+  my_mongo:
+    restart: always
+    image: 'mongo'
+    ports:
+      - "27017:27017"
+
+  my_redis:
+    restart: always
+    image: 'redis'
+    ports:
+        - "6379:6379"
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    volumes:
+      - /opt/app/node_modules
+      - ./server:/opt/app
+    ports:
+      - "4000:4000"
