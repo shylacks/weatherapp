@@ -17,12 +17,12 @@ const dbConnDataMongo = {
 };
 
 const dbConnDataRedis = {
-  port: process.env.REDIS_PORT || 6379,
   host: process.env.REDIS_HOST || "my_redis",
+  port: process.env.REDIS_PORT || 6379,
 };
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send({weather: "chujoza"});
 });
 
 const redis = new Redis(dbConnDataRedis);

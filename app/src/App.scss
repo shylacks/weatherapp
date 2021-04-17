@@ -15,6 +15,7 @@
     font-size: calc(10px + 2vmin);
     color: white;
   } */
+
 .App-link {
   color: #61dafb;
 }
@@ -26,16 +27,14 @@
   width: 100%;
   bottom: 0;
   border-top: 1px solid black;
-}
-
-#apiref #footer_content {
-  padding: 5px;
-}
-
-#apiref #footer_content a {
-  text-decoration: none;
-  color: #0169a7;
-  font-weight: 700;
+  #footer_content {
+    padding: 5px;
+    a {
+      text-decoration: none;
+      color: #0169a7;
+      font-weight: 700;
+    }
+  }
 }
 
 #mainnavbar {
@@ -44,23 +43,17 @@
   text-align: center;
   width: 100%;
   top: 0;
+  #navbar_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 80%;
+    padding: 5px;
+    a {
+      text-decoration: none;
+      color: #0169a7;
+      font-weight: 700;
+    }
+    #navbar_logo {
+      width: 150px;
+    }
+  }
 }
-
-#mainnavbar #navbar_content {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 80%;
-      grid-template-columns: 1fr 1fr 80%;
-  padding: 5px;
-}
-
-#mainnavbar #navbar_content a {
-  text-decoration: none;
-  color: #0169a7;
-  font-weight: 700;
-}
-
-#mainnavbar #navbar_content #navbar_logo {
-  width: 150px;
-}
-/*# sourceMappingURL=App.css.map */
