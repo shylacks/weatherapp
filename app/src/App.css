@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Roboto';
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -39,7 +40,8 @@
 }
 
 #mainnavbar {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
   background-color: #fe9658;
   text-align: center;
   width: 100%;
@@ -47,20 +49,48 @@
 }
 
 #mainnavbar #navbar_content {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 80%;
-      grid-template-columns: 1fr 1fr 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#mainnavbar #navbar_content a {
+#mainnavbar #navbar_content #logo_and_text {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  padding: 5px;
+  padding-right: 15px;
+  border-right: 2px dashed #0169a7;
+}
+
+#mainnavbar #navbar_content #logo_and_text a {
   text-decoration: none;
   color: #0169a7;
   font-weight: 700;
 }
 
-#mainnavbar #navbar_content #navbar_logo {
-  width: 150px;
+#mainnavbar #navbar_content #logo_and_text #navbar_logo {
+  width: 100px;
+}
+
+.formContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=App.css.map */

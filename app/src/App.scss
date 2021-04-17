@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Roboto';
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -38,22 +39,36 @@
 }
 
 #mainnavbar {
-  position: absolute;
+  position: sticky;
   background-color: #fe9658;
   text-align: center;
   width: 100%;
   top: 0;
   #navbar_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
-    a {
-      text-decoration: none;
-      color: #0169a7;
-      font-weight: 700;
-    }
-    #navbar_logo {
-      width: 150px;
+    justify-content: space-between;
+    & #logo_and_text{
+        justify-self: start;
+        padding: 5px;
+        padding-right: 15px;
+        border-right: 2px dashed #0169a7;
+        & a {
+            text-decoration: none;
+            color: #0169a7;
+            font-weight: 700;
+          }
+        & #navbar_logo {
+            width: 100px;
+          }
     }
   }
+}
+
+.formContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
