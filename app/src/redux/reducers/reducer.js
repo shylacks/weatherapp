@@ -1,6 +1,6 @@
 import { SUCCESS } from "../types/types";
 
-const _ = require("lodash");
+// const _ = require("lodash");
 
 const initialState = {
   weather: "none",

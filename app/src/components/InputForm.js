@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-const _ = require("lodash");
+// const _ = require("lodash");
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: "45ch",
+      width: "200px",
       padding: "10px",
     },
   },
@@ -34,7 +34,7 @@ const InputForm = (props) => {
               <Field
                 name="location"
                 key="location"
-                label="Search"
+                label="Search for basic info"
                 type="input"
                 className="input"
                 as={TextField}

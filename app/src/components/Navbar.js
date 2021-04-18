@@ -33,7 +33,7 @@ const Navbar = (props) => {
         </div>
         <div className={classes.root} id="buttons">
           <Button variant="contained" color="primary" >
-            Contact me <MailOutlineIcon style = {{marginLeft: "10px"}}/>
+            Contact <MailOutlineIcon style = {{marginLeft: "10px"}}/>
           </Button>
           <Button variant="contained" color="primary" style = {{minWidth: "120px"}}>
             Register
