@@ -3,7 +3,7 @@ import { SUCCESS } from "../types/types";
 // const _ = require("lodash");
 
 const initialState = {
-  weather: "none",
+  json: "none",
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
       console.log(action.payload)
       return {
         ...state,
-        weather: action.payload.weather,
+        json: action.payload,
       };
     default:
       return state;

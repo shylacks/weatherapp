@@ -1,10 +1,12 @@
 import { REQUEST, SUCCESS, FAILURE } from "./types/types";
 import { createAction } from "redux-api-middleware";
 
-export const getWeather = () => (dispatch) =>
+const KEY = "42f7ec7ad05c4a96982141833211804";
+
+export const getWeather = (CITY) => (dispatch) =>
   dispatch(
     createAction({
-      endpoint: "http://localhost:4000/",
+      endpoint: `https://api.weatherapi.com/v1/current.json?key=${KEY}&q=${CITY}&aqi=yes`,
       method: "GET",
       headers: {
         Accept: "application/json",

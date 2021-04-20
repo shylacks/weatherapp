@@ -1,13 +1,13 @@
 .App {
   text-align: center;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #ffb78e;
+  background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 90vh 3fr 3fr 3fr 0.2fr;
+  grid-template-rows: 0.1fr 3fr 3fr 3fr 3fr 0.2fr;
 }
 
 /* .App-header {
@@ -28,6 +28,7 @@
 #apiref {
   position: sticky;
   grid-column: 1/3;
+  grid-row: -1;
   background-color: #fe9658;
   display: flex;
   justify-content: center;
@@ -44,50 +45,90 @@
     }
   }
 }
-
-#mainnavbar {
+#navbar_content {
   background-color: #fe9658;
   grid-column: 1/3;
-  text-align: center;
-  width: 100%;
   top: 0;
-  #navbar_content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 25% auto;
+  & #buttons {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    flex-direction: row-reverse;
     align-items: center;
+    justify-self: center;
+  }
+  & #logo_and_text {
+    margin: 10px;
     padding: 5px;
-    justify-content: space-between;
-    & #logo_and_text{
-        justify-self: start;
-        padding: 5px;
-        padding-right: 15px;
-        border-right: 2px dashed #0169a7;
-        & a {
-            text-decoration: none;
-            color: #0169a7;
-            font-weight: 700;
-          }
-        & #navbar_logo {
-            width: 100px;
-          }
+    padding-right: 15px;
+    & a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: larger;
+    }
+    & #navbar_logo {
+      width: 100px;
     }
   }
 }
 
-.formContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.formContent {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
-#discord{
-    background-color: #7289da;
-    color: #ffffff;
-    border-radius: 5px;
-    grid-column: 1/3;
+#discord {
+  background-color: #7289da;
+  color: #ffffff;
+  border-radius: 5px;
+  grid-column: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 15px;
+}
+
+#info {
+  margin: 0 30px 0 30px;
+  font-size: 20px;
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  & div {
+    margin: 10px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    cursor: pointer;
-    margin: 15px;
+    justify-content: center;
+    background-color: #0169a7;
+    color: white;
+    border-radius: 10px;
+  }
+  & #weatherConditions {
+    grid-column: 2/3;
+  }
+  & #informationsAboutCountry {
+    grid-column: 1/2;
+  }
+  & #airQuality {
+    grid-column: 3/4;
+  }
+}
+
+.spec {
+  padding: 10px;
+  & .specTitle {
+    font-size: larger;
+    font-weight: 600;
+    margin-right: 2;
+  }
 }

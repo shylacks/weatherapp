@@ -2,14 +2,16 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Discord from "./components/Discord";
+import DisplayWeather from "./components/DisplayWeather";
+import store from "./redux/store";
+import { getWeather } from "./redux/rsaa";
 
 function App() {
+  store.dispatch(getWeather("Warsaw"))
   return (
     <div className="App">
       <Navbar />
-      <Discord />
-      <Discord/>
-      <Discord />
+      <DisplayWeather/>
       <Discord/>
       <Footer />
     </div>

@@ -4,13 +4,36 @@ import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import { getWeather } from "../redux/rsaa";
+import store from "../redux/store";
 // const _ = require("lodash");
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: "200px",
-      padding: "10px",
+      padding: "15px",
+      backgroundColor: "white",
+      borderRadius: "10px",
+      textDecoration: "none",
+    },
+    "& #input": {
+      height: 50,
+      width: 200,
+      outline: "none",
+      borderRadius: "5px",
+      paddingLeft: "10px",
+      margin: 10,
+      fontSize: "20px",
+      fontWeight: 500,
+    },
+    "& #search": {
+      height: 54,
+      outline: "none",
+      backgroundColor: "#0169a7",
+    },
+    "& #search:hover": {
+      backgroundColor: "#0169a7",
+      textUnderline: "none",
     },
   },
 }));
@@ -26,22 +49,28 @@ const InputForm = (props) => {
         onSubmit={async (values) => {
           await new Promise((resolve) => setTimeout(resolve, 100));
           console.log(values);
+          console.log(store.dispatch(getWeather(values.location)));
         }}
       >
         <Form id="searchform" key="FORM123" className={classes.root}>
           <div className="formContent" key="FORM13">
-            <div className="formContentAdd" key="FORM12">
+            <div className="formContentAdd" key="FORM12" >
               <Field
                 name="location"
                 key="location"
-                label="Search for basic info"
                 type="input"
-                className="input"
-                as={TextField}
+                id="input"
+                spellcheck="false"
               />
             </div>
-            <Button type="submit" variant="contained" color="primary" style = {{height: "50px"}}>
-              Search
+            <Button
+              variant="contained"
+              type="submit"
+              color="primary"
+              style={{ minWidth: "120px" }}
+              id="search"
+            >
+              SEARCH
             </Button>
           </div>
         </Form>
@@ -50,14 +79,4 @@ const InputForm = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    weather: state.weather,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(InputForm);
+export default InputForm;
