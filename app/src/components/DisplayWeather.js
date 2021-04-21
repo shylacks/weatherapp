@@ -1,12 +1,61 @@
 import React from "react";
 import { connect } from "react-redux";
 
+const epaStandard = (index) => {
+  switch (index) {
+    case 1:
+      return (
+        <div
+          style={{ color: "green", backgroundColor: "white", padding: "5px" }}
+        >
+          1 - Good
+        </div>
+      );
+    case 2:
+      return (
+        <div
+          style={{ color: "green", backgroundColor: "white", padding: "5px" }}
+        >
+          2 - Moderate
+        </div>
+      );
+    case 3:
+      return (
+        <div
+          style={{ color: "yellow", backgroundColor: "white", padding: "5px" }}
+        >
+          3 - Unhealthy for sensitive group
+        </div>
+      );
+    case 4:
+      return (
+        <div
+          style={{ color: "yellow", backgroundColor: "white", padding: "5px" }}
+        >
+          4 - Unhealthy
+        </div>
+      );
+    case 5:
+      return (
+        <div style={{ color: "red", backgroundColor: "white", padding: "5px" }}>
+          5 - Very Unhealthy
+        </div>
+      );
+    case 6:
+      return (
+        <div style={{ color: "red", backgroundColor: "white", padding: "5px" }}>
+          6 - Good
+        </div>
+      );
+  }
+};
+
 const DisplayWeather = (props) => {
   const location = props.json.location;
   const current = props.json.current;
   return location && current ? (
     <div id="info">
-      <div style={{ gridColumn: "1/4", padding: 10}}>
+      <div style={{ gridColumn: "1/4", padding: 10 }}>
         <span className="specTitle" style={{ fontWeight: 600 }}>
           Last update:{" "}
         </span>{" "}
@@ -34,7 +83,7 @@ const DisplayWeather = (props) => {
         <div className="spec" style={{ fontSize: 30 }}>
           {current.condition.text}
           <br></br>
-          <img src={current.condition.icon} />
+          <img src={current.condition.icon} style={{padding: "5px"}}/>
         </div>
 
         <div className="spec">
@@ -54,26 +103,25 @@ const DisplayWeather = (props) => {
         </div>
       </div>
       <div id="airQuality">
-        <div className="spec" style={{ fontSize: 30 }}>
-          {current.condition.text}
-          <br></br>
-          <img src={current.condition.icon} />
-        </div>
-
         <div className="spec">
-          <span className="specTitle">Temperature:</span> {current.temp_c}°C (
-          {current.feelslike_c}°C)
+          <span className="specTitle">US - EPA standard:</span>{" "}
+          {epaStandard(current.air_quality["us-epa-index"])}
         </div>
         <div className="spec">
-          <span className="specTitle">Speed of wind: </span>
-          {current.wind_kph} km/h
+          <span className="specTitle">Carbon Monoxide(μg/m3):</span>{" "}
+          {current.air_quality.co}
         </div>
         <div className="spec">
-          <span className="specTitle">Wind direction:</span> {current.wind_dir}
+          <span className="specTitle"> Ozone (μg/m3): </span>{" "}
+          {current.air_quality.o3}
         </div>
         <div className="spec">
-          <span className="specTitle">Preassure:</span> {current.pressure_mb}{" "}
-          kPa
+          <span className="specTitle"> Nitrogen dioxide (μg/m3):</span>{" "}
+          {current.air_quality.no2}
+        </div>
+        <div className="spec">
+          <span className="specTitle">Sulphur dioxide (μg/m3):</span>{" "}
+          {current.air_quality.so2}
         </div>
       </div>
     </div>
