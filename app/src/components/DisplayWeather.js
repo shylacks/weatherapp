@@ -6,7 +6,11 @@ const epaStandard = (index) => {
     case 1:
       return (
         <div
-          style={{ color: "green", backgroundColor: "white", padding: "5px" }}
+          style={{
+            color: "green",
+            backgroundColor: "whitesmoke",
+            padding: "5px",
+          }}
         >
           1 - Good
         </div>
@@ -14,7 +18,11 @@ const epaStandard = (index) => {
     case 2:
       return (
         <div
-          style={{ color: "green", backgroundColor: "white", padding: "5px" }}
+          style={{
+            color: "green",
+            backgroundColor: "whitesmoke",
+            padding: "5px",
+          }}
         >
           2 - Moderate
         </div>
@@ -22,7 +30,11 @@ const epaStandard = (index) => {
     case 3:
       return (
         <div
-          style={{ color: "yellow", backgroundColor: "white", padding: "5px" }}
+          style={{
+            color: "yellow",
+            backgroundColor: "whitesmoke",
+            padding: "5px",
+          }}
         >
           3 - Unhealthy for sensitive group
         </div>
@@ -30,20 +42,36 @@ const epaStandard = (index) => {
     case 4:
       return (
         <div
-          style={{ color: "yellow", backgroundColor: "white", padding: "5px" }}
+          style={{
+            color: "yellow",
+            backgroundColor: "whitesmoke",
+            padding: "5px",
+          }}
         >
           4 - Unhealthy
         </div>
       );
     case 5:
       return (
-        <div style={{ color: "red", backgroundColor: "white", padding: "5px" }}>
+        <div
+          style={{
+            color: "red",
+            backgroundColor: "whitesmoke",
+            padding: "5px",
+          }}
+        >
           5 - Very Unhealthy
         </div>
       );
     case 6:
       return (
-        <div style={{ color: "red", backgroundColor: "white", padding: "5px" }}>
+        <div
+          style={{
+            color: "red",
+            backgroundColor: "whitesmoke",
+            padding: "5px",
+          }}
+        >
           6 - Good
         </div>
       );
@@ -83,7 +111,10 @@ const DisplayWeather = (props) => {
         <div className="spec" style={{ fontSize: 30 }}>
           {current.condition.text}
           <br></br>
-          <img src={current.condition.icon} style={{padding: "5px"}}/>
+          <img
+            src={current.condition.icon}
+            style={{ padding: "5px", backgroundColor: "whitesmoke" }}
+          />
         </div>
 
         <div className="spec">
@@ -104,24 +135,24 @@ const DisplayWeather = (props) => {
       </div>
       <div id="airQuality">
         <div className="spec">
-          <span className="specTitle">US - EPA standard:</span>{" "}
+          <span className="specTitle">US - EPA standard:</span>
           {epaStandard(current.air_quality["us-epa-index"])}
         </div>
         <div className="spec">
-          <span className="specTitle">Carbon Monoxide(μg/m3):</span>{" "}
-          {current.air_quality.co}
+          <span className="specTitle">Carbon Monoxide:</span>
+          {current.air_quality.co.toFixed(2)} (μg/m3)
         </div>
         <div className="spec">
-          <span className="specTitle"> Ozone (μg/m3): </span>{" "}
-          {current.air_quality.o3}
+          <span className="specTitle"> Ozone:</span>
+          {current.air_quality.o3.toFixed(2)} (μg/m3)
         </div>
         <div className="spec">
-          <span className="specTitle"> Nitrogen dioxide (μg/m3):</span>{" "}
-          {current.air_quality.no2}
+          <span className="specTitle"> Nitrogen dioxide:</span>
+          {current.air_quality.no2.toFixed(2)} (μg/m3)
         </div>
         <div className="spec">
-          <span className="specTitle">Sulphur dioxide (μg/m3):</span>{" "}
-          {current.air_quality.so2}
+          <span className="specTitle">Sulphur dioxide:</span>
+          {current.air_quality.so2.toFixed(2)} (μg/m3)
         </div>
       </div>
     </div>
