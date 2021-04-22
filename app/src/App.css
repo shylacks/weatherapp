@@ -9,8 +9,8 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 0.1fr 3fr 1fr 0.2fr;
-      grid-template-rows: 0.1fr 3fr 1fr 0.2fr;
+  -ms-grid-rows: 0.1fr  0.2fr 2fr;
+      grid-template-rows: 0.1fr  0.2fr 2fr;
 }
 
 /* .App-header {

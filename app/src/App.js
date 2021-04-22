@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <Navbar />
       <DisplayWeather/>
-      <Discord/>
       <Footer />
     </div>
   );

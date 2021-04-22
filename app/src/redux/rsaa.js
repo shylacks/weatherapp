@@ -1,7 +1,6 @@
 import { REQUEST, SUCCESS, FAILURE } from "./types/types";
 import { createAction } from "redux-api-middleware";
-
-const KEY = "42f7ec7ad05c4a96982141833211804";
+import { KEY } from "./key";
 
 export const getWeather = (CITY) => (dispatch) =>
   dispatch(
