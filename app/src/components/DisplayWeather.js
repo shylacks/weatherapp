@@ -157,7 +157,7 @@ const DisplayWeather = (props) => {
       </div>
     </div>
   ) : (
-    <div>State is empty</div>
+    <div></div>
   );
 };
 

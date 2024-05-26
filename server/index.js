@@ -22,7 +22,7 @@ const dbConnDataRedis = {
 };
 
 app.get("/", (req, res) => {
-  res.send({weather: "chujoza"});
+  res.send({weather: "test"});
 });
 
 const redis = new Redis(dbConnDataRedis);

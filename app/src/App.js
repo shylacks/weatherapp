@@ -6,10 +6,12 @@ import DisplayWeather from "./components/DisplayWeather";
 import store from "./redux/store";
 import { getWeather } from "./redux/rsaa";
 
+const keys = process.env.KEY_TO_API
+
 function App() {
-  store.dispatch(getWeather("Warsaw"))
+  store.dispatch(getWeather("Warsaw")) // inital load
   return (
-    <div className="App">
+    <div className="App">      
       <Navbar />
       <DisplayWeather/>
       <Footer />

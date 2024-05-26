@@ -27,7 +27,7 @@ const Navbar = (props) => {
           </a>
           <div id="navbar_text_logo">
             <a href="#" title="Free Weather API">
-              WeatherIO
+              WeatherIOX
             </a>
           </div>
         </div>
